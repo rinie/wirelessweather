@@ -208,7 +208,7 @@ class BR1800 : public WSBase
 {
 public:
     BR1800() {};
-    
+
     BR1800(uint8_t fmt, uint8_t len, uint8_t *buf)
     {
         msgformat = fmt;
@@ -319,7 +319,7 @@ class WH1080 : public WSBase
 {
 public:
     WH1080() {};
-    
+
     WH1080(uint8_t fmt, uint8_t len, uint8_t *buf)
     {
         msgformat = fmt;

@@ -576,7 +576,7 @@ void report()
 }
 
 //DEBUG wifi disconnects
-void WiFiEvent(WiFiEvent_t event, system_event_info_t info)
+void WiFiEvent(WiFiEvent_t event, WiFiEventInfo_t info)
 {
     switch (event)
     {
@@ -610,6 +610,7 @@ void WiFiEvent(WiFiEvent_t event, system_event_info_t info)
         //esp_wifi_wps_start(0);
         break;
     case SYSTEM_EVENT_STA_WPS_ER_PIN:
+    /*
         char wps_pin[9];
         for (int i = 0; i < 8; i++)
         {
@@ -617,6 +618,8 @@ void WiFiEvent(WiFiEvent_t event, system_event_info_t info)
         }
         wps_pin[8] = '\0';
         printf("WPS_PIN = %s\n", wps_pin);
+        */
+
         break;
     default:
         break;

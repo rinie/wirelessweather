@@ -46,7 +46,7 @@ struct WSSetting
     char wgUID[40];
     char wgPW[40];
 
-    WSSetting() : mreportable(false), 
+    WSSetting() : mreportable(false),
                   wsID(0xffff), wsType(0xffff),
                   windfactor(1.0),
                   wunderground(false),
@@ -89,7 +89,7 @@ struct WSSetting
 
     virtual bool reportable()
     {
-        //printf("WSSetting::reportable()\n");       
+        //printf("WSSetting::reportable()\n");
         if (mreportable)
         {
             mreportable = false;
@@ -159,7 +159,7 @@ struct WSSetting
         ojson["wgSalt"] = wgSalt;
         ojson["wgUID"] = wgUID;
         ojson["wgPW"] = wgPW;
-        
+
         return;
     }
 
@@ -402,7 +402,7 @@ struct WSWH1080 : public WSSetting //public WH1080, public WSSetting
     }
 
     void validatePackets() {
-        printf("WH1080 received %d packets with crc ok in burst", burstCount);       
+        printf("WH1080 received %d packets with crc ok in burst", burstCount);
         if (burstCount > 1) {
             for (int i = 0; i < burstCount - 1; i++)
             {
@@ -429,7 +429,7 @@ struct WSWH1080 : public WSSetting //public WH1080, public WSSetting
             wsp->decode(wsp->msgformat, (uint8_t *)packets[maxEqualIdx], len);
         }
     }
-    
+
     virtual bool reportable()
     {
         //printf("WH1080 reportable()\n");
